@@ -1,0 +1,23 @@
+<nav>
+<% if !user_signed_in? %>
+
+    <%= link_to 'home', root_path %>
+
+    <%= link_to 'movies', lists_path %>
+
+    <%= link_to 'signin', new_user_session_path %>
+
+    <%= link_to 'signup', new_user_registration_path %>
+
+<% else %>
+
+    <%= link_to 'home', root_path %>
+
+    <%= link_to 'movies', lists_path %>
+
+    <%= link_to 'edit', edit_user_registration_path %>
+
+    <a rel="nofollow" data-method="delete" href="/users/sign_out">log out</a>
+
+<% end %>
+</nav>
