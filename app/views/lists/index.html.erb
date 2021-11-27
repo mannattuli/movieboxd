@@ -1,5 +1,6 @@
 <h1>Movies</h1>
 
+<% if user_signed_in? %>
 <table>
   <thead>
     <tr style="text-align:left">
@@ -27,3 +28,9 @@
 <br>
 
 <%= link_to 'New List', new_list_path %>
+
+<% else %>
+
+<p>Pls Login</p>
+
+<% end %>
