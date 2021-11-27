@@ -16,8 +16,7 @@ class ListsController < ApplicationController
 
   # GET /lists/new
   def new
-    # @list = List.new
-    @list = current_user.lists.build
+    @list = List.new
   end
 
   # GET /lists/1/edit
@@ -26,8 +25,7 @@ class ListsController < ApplicationController
 
   # POST /lists or /lists.json
   def create
-    # @list = List.new(list_params)
-    @list = current_user.lists.build(list_params)
+    @list = List.new(list_params)
 
     respond_to do |format|
       if @list.save
